@@ -22,7 +22,7 @@ const users = [
 
 const siteConfig = {
   title: 'Document Datagrin', // Title for your website.
-  tagline: 'A website for testing',
+  tagline: 'A document for datagrin',
   url: 'https://huuhoa14399.github.io', // Your website URL
   baseUrl: '/huuhoa14399.github.io/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
