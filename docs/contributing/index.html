@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Datagrin Contributing Guide · Datagrin</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Hướng dẫn cơ bản để  đóng góp vào project."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Datagrin Contributing Guide · Datagrin"/><meta property="og:type" content="website"/><meta property="og:url" content="https://huuhoa14399.github.io/huuhoa14399.github.io/"/><meta property="og:description" content="Hướng dẫn cơ bản để  đóng góp vào project."/><meta property="og:image" content="https://huuhoa14399.github.io/huuhoa14399.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://huuhoa14399.github.io/huuhoa14399.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/huuhoa14399.github.io/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://huuhoa14399.github.io/huuhoa14399.github.io/blog/atom.xml" title="Datagrin Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://huuhoa14399.github.io/huuhoa14399.github.io/blog/feed.xml" title="Datagrin Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/huuhoa14399.github.io/js/scrollSpy.js"></script><link rel="stylesheet" href="/huuhoa14399.github.io/css/main.css"/><script src="/huuhoa14399.github.io/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/huuhoa14399.github.io/"><img class="logo" src="/huuhoa14399.github.io/img/favicon.ico" alt="Datagrin"/><h2 class="headerTitleWithLogo">Datagrin</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/huuhoa14399.github.io/docs/server" target="_self">Docs</a></li><li class=""><a href="/huuhoa14399.github.io/docs/doc4" target="_self">API</a></li><li class=""><a href="/huuhoa14399.github.io/help" target="_self">Help</a></li><li class=""><a href="/huuhoa14399.github.io/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Contributing</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Server</h3><ul class=""><li class="navListItem"><a class="navItem" href="/huuhoa14399.github.io/docs/server">Datagrin Server</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">WebApp</h3><ul class=""><li class="navListItem"><a class="navItem" href="/huuhoa14399.github.io/docs/webapp">Datagrin Web App</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Contributing</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/huuhoa14399.github.io/docs/contributing">Datagrin Contributing Guide</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Datagrin Contributing Guide</h1></header><article><div><span><p>Hướng dẫn cơ bản để  đóng góp vào project.</p>
+<h2><a class="anchor" aria-hidden="true" id="general"></a><a href="#general" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>General</h2>
+<ul>
+<li>Chắc chắn rằng không có pull request nào đề cập đến vấn đề/feature mà bạn đang thực hiện.</li>
+<li>Đưa ra issue nếu tồn tại vấn đề mới, gán nhãn phù hợp cho từng vấn đề.</li>
+<li>Tạo nhánh issue/feature để giải quyết vấn đề bạn đang giải quyết.</li>
+<li>Tên nhánh ngắn gọn (dưới 30 ký tự) , nối nhanh giữa các từ bởi dấu <code>-</code> theo dạng <strong>type</strong>-<strong>subject</strong>:
+<ul>
+<li>Issue: <code>issue-IssueID-desc</code>. Ví dụ: <code>issue-12-auth-error</code>.</li>
+<li>Feature: <code>feat-desc</code>. Ví dụ: <code>feat-search-product-api</code>.</li>
+<li>Docs: <code>doc-desc</code>. Ví dụ: <code>doc-search-product-docs</code>.</li>
+</ul></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="commit-message-format"></a><a href="#commit-message-format" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Commit Message Format</h2>
+<p>Mỗi commit message có <strong>type</strong> và có mô tả <strong>subject</strong>:</p>
+<pre><code class="hljs"> &lt;<span class="hljs-class"><span class="hljs-keyword">type</span>&gt;: &lt;subject&gt;</span>
+</code></pre>
+<p>Nội dung commit không quá 100 kí tự, ngắn gọn đủ diễn đạt nội dung commit muốn đề cập. Điều này giúp cho
+dev dễ theo dõi git log:</p>
+<pre><code class="hljs"> #<span class="hljs-number">271</span> feat(containers): add exposed ports <span class="hljs-keyword">in</span> the containers <span class="hljs-built_in">view</span>
+ #<span class="hljs-number">270</span> <span class="hljs-built_in">fix</span>(templates): <span class="hljs-built_in">fix</span> a <span class="hljs-built_in">display</span> issue <span class="hljs-keyword">in</span> the templates <span class="hljs-built_in">view</span>
+ #<span class="hljs-number">269</span> <span class="hljs-built_in">style</span>(dashboard): update dashboard with <span class="hljs-built_in">new</span> layout
+</code></pre>
+<p>Trong trường hợp có nhiều loại thay đổi, ngăn tách giữa các type bởi <code>/</code>. Ví dụ: <code>feat/fix: something ...</code> .</p>
+<h3><a class="anchor" aria-hidden="true" id="type"></a><a href="#type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Type</h3>
+<p>Giá trị <strong>type</strong> có thể nhận một số giá trị:</p>
+<ul>
+<li><strong>feat</strong>: Feature mới</li>
+<li><strong>fix</strong>: Fix lỗi bug</li>
+<li><strong>docs</strong>: Tài liệu, api</li>
+<li><strong>style</strong>: Thay đổi code style, không ảnh hưởng ý nghĩa của code (dấu, typo,..)
+semi-colons, etc)</li>
+<li><strong>refactor</strong>: Thay đổi cấu trúc tổ chức của project</li>
+<li><strong>test</strong>: Thêm các test thiếu</li>
+<li><strong>chore</strong>: Thay đổi nhỏ liên quan đến build process, tool và thư viện phụ thuộc,...</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="subject"></a><a href="#subject" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Subject</h3>
+<p>Tiêu đề của commit cần:</p>
+<ul>
+<li>Sử dụng động từ nguyên thể, thì hiện tại đơn.</li>
+<li>Không viết hoa chữ cái đầu</li>
+<li>Không sử dụng dấu (.) ở cuối câu</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="tham-khảo"></a><a href="#tham-khảo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tham khảo</h3>
+<ul>
+<li><a href="https://raw.githubusercontent.com/portainer/portainer/develop/CONTRIBUTING.md">Portainer Contributing Guide</a></li>
+<li><a href="https://www.conventionalcommits.org/en/v1.0.0-beta.2/">Conventional Commits</a></li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/huuhoa14399.github.io/docs/webapp"><span class="arrow-prev">← </span><span>Datagrin Web App</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#general">General</a></li><li><a href="#commit-message-format">Commit Message Format</a><ul class="toc-headings"><li><a href="#type">Type</a></li><li><a href="#subject">Subject</a></li><li><a href="#tham-khảo">Tham khảo</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/huuhoa14399.github.io/" class="nav-home"><img src="/huuhoa14399.github.io/img/favicon.ico" alt="Datagrin" width="66" height="58"/></a><div><h5>Docs</h5><a href="/huuhoa14399.github.io/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/huuhoa14399.github.io/docs/en/doc2.html">Guides (or other categories)</a><a href="/huuhoa14399.github.io/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/huuhoa14399.github.io/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/huuhoa14399.github.io/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/huuhoa14399.github.io/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>
