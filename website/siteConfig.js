@@ -21,7 +21,7 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'Document Datagrin', // Title for your website.
+  title: 'Datagrin', // Title for your website.
   tagline: 'A document for datagrin',
   url: 'https://huuhoa14399.github.io', // Your website URL
   baseUrl: '/huuhoa14399.github.io/', // Base URL for your project */
@@ -38,7 +38,7 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
+    {doc: 'server', label: 'Docs'},
     {doc: 'doc4', label: 'API'},
     {page: 'help', label: 'Help'},
     {blog: true, label: 'Blog'},
