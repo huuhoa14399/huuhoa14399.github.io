@@ -3,8 +3,7 @@
     "Server": ["server"],
     "WebApp": ["webapp"],
     "Contributing": ["contributing"],
-    "Test Docs": ["api"],
-    "ABC Docs": ["test"]
+    "Channel Info": ["info"]
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]
