@@ -2,7 +2,9 @@
   "docs": {
     "Server": ["server"],
     "WebApp": ["webapp"],
-    "Contributing": ["contributing"]
+    "Contributing": ["contributing"],
+    "Test Docs": ["api"],
+    "ABC Docs": ["test"]
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]
