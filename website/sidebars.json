@@ -3,7 +3,8 @@
     "Server": ["server"],
     "WebApp": ["webapp"],
     "Contributing": ["contributing"],
-    "Channel Info": ["info"]
+    "Channel Info": ["info"],
+    "Work Flow": ["workflow"]
   },
   "docs-other": {
     "First Category": ["doc4", "doc5"]
